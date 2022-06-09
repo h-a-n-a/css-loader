@@ -18,6 +18,8 @@ describe("loader", () => {
     const compiler = getCompiler("./basic.js");
     const stats = await compile(compiler);
 
+    console.log(getExecutedCode("main.bundle.js", compiler, stats));
+
     expect(getModuleSource("./basic.css", stats)).toMatchSnapshot("module");
     expect(getExecutedCode("main.bundle.js", compiler, stats)).toMatchSnapshot(
       "result"

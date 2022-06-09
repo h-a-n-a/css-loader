@@ -273,13 +273,13 @@ const plugin = (options = {}) => {
                   return;
                 }
 
-                if (resolvedUrl === loaderContext.resourcePath) {
+                if (resolvedUrl === loaderContext.resourcePath) { // 处理自身引用
                   atRule.remove();
 
                   return;
                 }
 
-                atRule.remove();
+                atRule.remove(); // 从 ast 中移除 atRule，如 at import
 
                 // eslint-disable-next-line consistent-return
                 return {

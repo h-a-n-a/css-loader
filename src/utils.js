@@ -1221,7 +1221,7 @@ async function resolveRequests(resolve, context, possibleRequests) {
       return resolveRequests(resolve, context, tailPossibleRequests);
     });
 }
-
+// 跳过 dataURL
 function isURLRequestable(url, options = {}) {
   // Protocol-relative URLs
   if (/^\/\//.test(url)) {
